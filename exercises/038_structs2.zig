@@ -20,6 +20,7 @@ const Character = struct {
     gold: u32,
     health: u8,
     experience: u32,
+    name: []const u8,
 };
 
 pub fn main() void {
@@ -31,8 +32,10 @@ pub fn main() void {
         .gold = 20,
         .health = 100,
         .experience = 10,
+        .name = "Glorp the Wise",
     };
 
+    chars[1] = Character{ .role = Role.bard, .gold = 10, .health = 100, .experience = 20, .name = "Zump the Loud" };
     // Please add "Zump the Loud" with the following properties:
     //
     //     role       bard

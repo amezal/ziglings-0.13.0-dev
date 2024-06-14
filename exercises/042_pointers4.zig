@@ -37,5 +37,16 @@ pub fn main() void {
 // This function should take a reference to a u8 value and set it
 // to 5.
 fn makeFive(x: *u8) void {
-    ??? = 5; // fix me!
+    x.* = 5; // fix me!
+}
+
+pub fn testFn() void {
+    var x: u8 = 4;
+    std.debug.print("{}\n", .{x});
+    square(&x);
+    std.debug.print("{}\n", .{x});
+}
+
+fn square(n: *u8) void {
+    n.* = std.math.pow(u8, n.*, 2);
 }

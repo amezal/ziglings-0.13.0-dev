@@ -35,10 +35,13 @@ pub fn main() void {
     // at compile time.
     //
     // Please fix this to loop once per "instruction":
-    ??? (i < instructions.len) : (???) {
+    inline while (i < instructions.len) : (i += 3) {
 
         // This gets the digit from the "instruction". Can you
         // figure out why we subtract '0' from it?
+        // R: Because in UTF-8, numerical digits start with '0',
+        // which is the integer 48. This is basically a cast from
+        // string char to int.
         const digit = instructions[i + 1] - '0';
 
         // This 'switch' statement contains the actual work done
@@ -63,4 +66,10 @@ pub fn main() void {
     }
 
     print("{}\n", .{value});
+    // const foo = [3]*const [5]u8{ "~{s}~", "<{s}>", "d{s}b" };
+    // comptime var j = 0;
+    //
+    // inline while (j < foo.len) : (j += 1) {
+    //     print(foo[j] ++ "\n", .{foo[j]});
+    // }
 }

@@ -72,15 +72,15 @@ const print = std.debug.print;
 pub fn main() !void {
 
     // As in the example above, we use 1 and 0 as values for x and y
-    var x: u8 = 1;
-    var y: u8 = 0;
-
+    var x: u8 = 1; // 0001
+    var y: u8 = 0; // 0000
+    //
     // Now we swap the values of the two variables by doing xor on them
-    x ^= y;
-    y ^= x;
+    x ^= y; // x = 0001
+    y ^= x; // y = 0001
 
     // What must be written here?
-    ???;
+    x ^= y; // x = 0000
 
     print("x = {d}; y = {d}\n", .{ x, y });
 }

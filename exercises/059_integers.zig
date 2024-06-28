@@ -20,10 +20,10 @@ const print = @import("std").debug.print;
 
 pub fn main() void {
     const zig = [_]u8{
-        0o131 + 1, // octal
-        0b1101000 + 1, // binary
-        0x66 + 1, // hex
+        0o132, // octal
+        0b1101001, // binary
+        0x67, // hex
     };
 
-    print("{u} is cool.\n", .{zig});
+    print("{s} is cool.\n", .{zig});
 }
